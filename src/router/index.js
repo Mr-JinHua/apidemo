@@ -7,19 +7,30 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: '/home'
+    },
+    {
       path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
-      path: '/apidetail',
-      name: 'Apidetail',
-      component: resolve => require(['@/page/Apidetail'], resolve)
-    },
-    {
       path: '/home',
       name: 'home',
-      component: resolve => require(['@/page/Home'], resolve)
+      component: resolve => require(['@/pages/Home'], resolve)
+    },
+    {
+      path: '/apidetail',
+      name: 'Apidetail',
+      component: resolve => require(['@/pages/Apidetail'], resolve),
+      children: [
+        {
+          path: '/apidetail/apimd',
+          name: 'Apimd',
+          component: resolve => require(['@/components/apidetail/Apimd'], resolve)
+        }
+      ]
     }
   ]
 })

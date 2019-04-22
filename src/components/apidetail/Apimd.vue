@@ -1,15 +1,29 @@
 <template>
-  <div class="hello">
+  <div class="apimd">
+    ddjj
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'HelloWorld',
+  name: 'Apimd',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted() {
+    this.getmdfile()
+  },
+  methods: {
+    getmdfile: function() {
+      this.$axios('http://127.0.0.1:3000/use/md').then((res) => {
+        console.log(res.data)
+      })
+    }
+  },
+  components: {
   }
 }
 </script>
