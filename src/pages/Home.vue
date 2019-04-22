@@ -4,8 +4,12 @@
       <img src="../assets/home-banner.png">
     </section>
     <section class="tabs-contents">
-      <el-tabs type="card" @tab-click="handleClick">
-        <el-tab-pane label="API 列表" name="first">API 列表</el-tab-pane>
+      <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+        <el-tab-pane label="API 列表" name="first">
+          <div class="api-list-content">
+            <Apilist />
+          </div>
+        </el-tab-pane>
         <el-tab-pane label="关于 yonyou" name="second">关于 yonyou</el-tab-pane>
         <el-tab-pane label="服务与支持" name="third">服务与支持</el-tab-pane>
       </el-tabs>
@@ -14,10 +18,12 @@
 </template>
 
 <script>
+import Apilist from '@/components/home/Apilist'
 export default {
   name: 'Home',
   data() {
     return {
+      activeName: 'first',
       msg: 'Welcome to Your Home'
     }
   },
@@ -25,6 +31,9 @@ export default {
     handleClick: function() {
       console.log('handleClick')
     }
+  },
+  components: {
+    Apilist
   }
 }
 </script>
@@ -38,6 +47,10 @@ export default {
   }
 }
 .home section.tabs-contents {
+  .api-list-content {
+    display: flex;
+    justify-content: center;
+  }
   /deep/.el-tabs {
     .el-tabs__nav-scroll{
       display: flex;
