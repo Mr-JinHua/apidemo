@@ -6,10 +6,12 @@
       @node-click="handleNodeClick"
       :render-content="renderContent"
     ></el-tree>
+    <Apimd></Apimd>
   </div>
 </template>
 
 <script>
+import Apimd from './Apimd'
 export default {
   name: 'Apilist',
   data() {
@@ -77,6 +79,9 @@ export default {
         console.log(res.data)
       })
     }
+  },
+  components: {
+    Apimd
   }
 }
 </script>

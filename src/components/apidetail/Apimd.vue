@@ -1,11 +1,11 @@
 <template>
   <div class="apimd">
-    ddjj
+    <div id="content"></div>
   </div>
 </template>
 
 <script>
-
+import marked from 'marked'
 export default {
   name: 'Apimd',
   data() {
@@ -19,7 +19,7 @@ export default {
   methods: {
     getmdfile: function() {
       this.$axios('http://127.0.0.1:3000/use/md').then((res) => {
-        console.log(res.data)
+        document.getElementById('content').innerHTML = marked(res.data)
       })
     }
   },
