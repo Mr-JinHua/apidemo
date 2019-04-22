@@ -26,6 +26,7 @@ export default {
   components: {
   }
 }
+
 </script>
 <style lang="less" src="@/less/common.less" scoped></style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
