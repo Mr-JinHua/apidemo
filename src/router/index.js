@@ -21,6 +21,11 @@ export default new Router({
       component: resolve => require(['@/pages/Home'], resolve)
     },
     {
+      path: '/api',
+      name: 'api',
+      component: resolve => require(['@/pages/Api'], resolve)
+    },
+    {
       path: '/apidetail',
       name: 'Apidetail',
       component: resolve => require(['@/pages/Apidetail'], resolve),

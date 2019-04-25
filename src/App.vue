@@ -11,8 +11,3 @@ export default {
 </script>
 
 <style lang="less" src="@/less/common.less" scoped></style>
-<style lang="less">
-li a{
-  color: red;
-}
-</style>

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Apiitem from '@/components/home/apiitem'
+import Apiitem from '@/components/api/apiitem'
 export default {
   name: 'Apilist',
   data() {

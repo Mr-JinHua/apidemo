@@ -1,5 +1,5 @@
 <template>
-  <div class="apiitem">
+  <div class="apiitem" @click="toPage">
     <div class="header">
       <img src="@/assets/home/api.png" alt="">
     </div>
@@ -12,9 +12,20 @@
 <script>
 export default {
   name: 'Apiitem',
+  props: {
+    href: {
+      type: String,
+      default: '/apidetail/apimd'
+    }
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    toPage() {
+      this.$router.push(this.href)
     }
   }
 }
