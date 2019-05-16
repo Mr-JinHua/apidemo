@@ -4,15 +4,9 @@
       <img src="../assets/home-banner.png">
     </section>
     <section class="tabs-contents">
-      <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-        <el-tab-pane label="API 列表" name="first">
-          <div class="api-list-content">
-            <Apilist />
-          </div>
-        </el-tab-pane>
-        <el-tab-pane label="关于 yonyou" name="second">关于 yonyou</el-tab-pane>
-        <el-tab-pane label="服务与支持" name="third">服务与支持</el-tab-pane>
-      </el-tabs>
+      <div class="api-list-content">
+        <Apilist />
+      </div>
     </section>
   </div>
 </template>
