@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import marked from 'marked'
 import Apimd from './Apimd'
 export default {
   name: 'Apilist',
@@ -85,8 +86,15 @@ export default {
       )
     },
     getmdfile: function() {
-      this.$axios('http://127.0.0.1:3000/use/md').then((res) => {
-        console.log(res.data)
+      this.$axios('http://10.4.112.32:1112/opm/showdoc.do', {
+        path: '/aim/equip/md/equip.md'
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'CharacterEncoding': 'utf-8'
+        }
+      }).then((res) => {
+        document.getElementById('content').innerHTML = marked(res.data)
       })
     }
   },
