@@ -22,7 +22,6 @@
         </el-form-item>
       </div>
     </el-form>
-    <div>add</div>
   </div>
 </template>
 

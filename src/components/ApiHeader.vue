@@ -10,11 +10,11 @@
         </el-submenu> -->
         <el-menu-item index="11">API 浏览</el-menu-item>
         <el-menu-item index="12">API 维护</el-menu-item>
-        <el-submenu index="1">
+        <!-- <el-submenu index="1">
           <template slot="title">API管理</template>
           <el-menu-item index="11">API 浏览</el-menu-item>
           <el-menu-item index="12">API 维护</el-menu-item>
-        </el-submenu>
+        </el-submenu> -->
         <el-submenu index="2">
           <template slot="title">第三方应用管理</template>
           <el-menu-item index="21">添加</el-menu-item>

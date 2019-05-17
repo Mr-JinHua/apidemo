@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getmdfile: function() {
-      this.$axios('http://10.4.112.32:1112/opm/showdoc.do', {
+      this.$axios.post('http://10.4.112.32:1112/opm/apimanager/showdoc.do', {
         path: '/aim/equip/md/equip.md'
       }, {
         headers: {
@@ -27,6 +27,7 @@ export default {
           'CharacterEncoding': 'utf-8'
         }
       }).then((res) => {
+        // console.log(res.data, 'axios')
         document.getElementById('content').innerHTML = marked(res.data)
       })
     }

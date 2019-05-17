@@ -15,8 +15,33 @@
 </template>
 
 <script>
-import marked from 'marked'
 import Apimd from './Apimd'
+
+function dealTree(data) {
+  let newdata = []
+  console.log(data, data.length)
+  data.forEach((item, index) => {
+    item.label = item.name
+    if (!item.parentCode) {
+      newdata.push(item)
+    } else {
+      newdata.forEach((itemc) => {
+        if (item.parentCode) {
+          if (item.parentCode === itemc.code) {
+            if (!itemc.children) {
+              itemc.children = []
+              itemc.children.push(item)
+            } else {
+              itemc.children.push(item)
+            }
+          }
+        }
+      })
+    }
+  })
+  return newdata
+}
+
 export default {
   name: 'Apilist',
   data() {
@@ -62,13 +87,24 @@ export default {
       }
     }
   },
+  created() {
+    this.getTree()
+  },
   mounted() {
-    this.eventbus.$on('jinemit', (data) => {
-      console.log(data)
-    })
-    this.getmdfile()
   },
   methods: {
+    getTree() {
+      this.$axios.post('http://10.4.112.32:1112/opm/apimanager/getTree.do', {
+        headers: {
+          'Content-Type': 'application/json',
+          'CharacterEncoding': 'utf-8'
+        }
+      }).then((res) => {
+        console.log(res.data)
+        console.log(dealTree(res.data))
+        this.data = dealTree(res.data)
+      })
+    },
     newemit() {
     },
     handleNodeClick(data) {
@@ -84,18 +120,6 @@ export default {
           </span>
         </span>
       )
-    },
-    getmdfile: function() {
-      this.$axios('http://10.4.112.32:1112/opm/showdoc.do', {
-        path: '/aim/equip/md/equip.md'
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'CharacterEncoding': 'utf-8'
-        }
-      }).then((res) => {
-        document.getElementById('content').innerHTML = marked(res.data)
-      })
     }
   },
   components: {
