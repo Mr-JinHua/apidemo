@@ -9,7 +9,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import './assets/icon/iconfont.css'
+import store from '@/store'
 
+// 创建事件总线
+Vue.prototype.eventbus = new Vue()
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
@@ -18,6 +21,7 @@ Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

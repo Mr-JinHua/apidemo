@@ -1,22 +1,24 @@
 <template>
   <div class="home">
-    <div class="header">服务网关</div>
     <div class="main">
       <router-link to="/apidetail/apimd" class="item">服务管理</router-link>
       <router-link to="/apidetail/apimd" class="item">路由管理</router-link>
       <router-link to="/apidetail/apimd" class="item">过滤器管理</router-link>
-      <router-link to="/apidetail/apimd" class="item">API接口管理</router-link>
+      <router-link to="/api" class="item">API接口管理</router-link>
       <router-link to="/apidetail/apimd" class="item">第三方应用管理</router-link>
     </div>
   </div>
 </template>
 <script>
+
 export default {
   name: 'Home',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
   }
 }
 </script>

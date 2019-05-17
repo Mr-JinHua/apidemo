@@ -9,7 +9,7 @@
       ></el-tree>
     </div>
     <div class="apilist-right">
-      <Apimd />
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -23,21 +23,36 @@ export default {
       data: [{
         label: '一级 1',
         children: [{
-          label: '二级 1-1'
+          label: '二级 1-1',
+          children: [{
+            label: '三级 1-1-1'
+          }]
         }]
       }, {
         label: '一级 2',
         children: [{
-          label: '二级 2-1'
+          label: '二级 2-1',
+          children: [{
+            label: '三级 2-1-1'
+          }]
         }, {
-          label: '二级 2-2'
+          label: '二级 2-2',
+          children: [{
+            label: '三级 2-2-1'
+          }]
         }]
       }, {
         label: '一级 3',
         children: [{
-          label: '二级 3-1'
+          label: '二级 3-1',
+          children: [{
+            label: '三级 3-1-1'
+          }]
         }, {
-          label: '二级 3-2'
+          label: '二级 3-2',
+          children: [{
+            label: '三级 3-2-1'
+          }]
         }]
       }],
       defaultProps: {
@@ -47,9 +62,14 @@ export default {
     }
   },
   mounted() {
+    this.eventbus.$on('jinemit', (data) => {
+      console.log(data)
+    })
     this.getmdfile()
   },
   methods: {
+    newemit() {
+    },
     handleNodeClick(data) {
       console.log(data)
     },
@@ -75,17 +95,17 @@ export default {
   }
 }
 </script>
-<style lang="less" src="@/less/common.less" scoped></style>
+<style lang="less" src="@/less/common.less"></style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+@cred: #e14c46;
 .Apilist {
   display: flex;
-  // justify-content: space-between;
   .apilist-left {
     border-right: 1px solid #f3f3f3;
     min-height: 800px;
     padding-right: 15px;
-    width: 160px;
+    width: 220px;
     box-sizing: border-box;
   }
   .apilist-right {
@@ -114,6 +134,9 @@ export default {
       height: 14px;
       display: inline-block;
       background: url('../../assets/apidetail/api.png') 0 0 no-repeat;
+    }
+    .is-current {
+      color: @cred;
     }
   }
 }
