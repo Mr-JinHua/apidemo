@@ -20,10 +20,8 @@ export default {
   name: 'Apilist',
   data() {
     return {
-      data: [
-        {
+      data: [{
         label: '一级 1',
-<<<<<<< HEAD
         children: [{
           label: '二级 1-1',
           children: [{
@@ -43,29 +41,6 @@ export default {
             label: '三级 2-2-1'
           }]
         }]
-=======
-        children: [
-          {
-            label: '二级 1-1',
-            children: [
-              {
-                label: 'san级 1-1',
-              }
-            ]
-          }
-        ]
-        },
-        {
-        label: '一级 2',
-        children: [
-          {
-            label: '二级 2-1'
-          },
-          {
-            label: '二级 2-2'
-          }
-        ]
->>>>>>> f576dc4ffeea8ddbbe164140a1107a78b7e3b7d5
       }, {
         label: '一级 3',
         children: [{
