@@ -3,6 +3,7 @@
     <div class="api-icon" @click="returnHome">NCCloud 开放管理平台</div>
     <div class="api-tab">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="routerSelect">
+<<<<<<< HEAD
         <!-- <el-submenu index="1">
           <template slot="title">API管理</template>
           <el-menu-item index="11">API 浏览</el-menu-item>
@@ -10,6 +11,13 @@
         </el-submenu> -->
         <el-menu-item index="11">API 浏览</el-menu-item>
         <el-menu-item index="12">API 维护</el-menu-item>
+=======
+        <el-submenu index="1">
+          <template slot="title">API管理</template>
+          <el-menu-item index="11">API 浏览</el-menu-item>
+          <el-menu-item index="12">API 维护</el-menu-item>
+        </el-submenu>
+>>>>>>> f576dc4ffeea8ddbbe164140a1107a78b7e3b7d5
         <el-submenu index="2">
           <template slot="title">第三方应用管理</template>
           <el-menu-item index="21">添加</el-menu-item>

@@ -1,5 +1,6 @@
 <template>
   <div class="query">
+<<<<<<< HEAD
     <el-table
       :data="tableData"
       border
@@ -31,6 +32,9 @@
         label="操作">
       </el-table-column>
     </el-table>
+=======
+    <div>query</div>
+>>>>>>> f576dc4ffeea8ddbbe164140a1107a78b7e3b7d5
   </div>
 </template>
 
@@ -39,6 +43,7 @@ export default {
   name: 'Processquery',
   data() {
     return {
+<<<<<<< HEAD
       msg: 'Welcome to Your Vue.js App',
       tableData: [{
         num: 1,
@@ -48,6 +53,9 @@ export default {
         NCCnum: '34343',
         operation: '修改 删除'
       }]
+=======
+      msg: 'Welcome to Your Vue.js App'
+>>>>>>> f576dc4ffeea8ddbbe164140a1107a78b7e3b7d5
     }
   }
 }
